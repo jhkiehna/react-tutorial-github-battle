@@ -1,6 +1,6 @@
-#Tyler Mcginnis React Tutorial - Github Battle
+# Tyler Mcginnis React Tutorial - Github Battle
 
-##install
+## install
 
 - yarn
 - npm run build
