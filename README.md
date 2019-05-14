@@ -1,6 +1,9 @@
 # Tyler Mcginnis React Tutorial - Github Battle
 
-## install
+## Install
 
 - yarn
-- npm run build
+
+## Run Locally
+
+- yarn run build
