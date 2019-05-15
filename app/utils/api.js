@@ -1,6 +1,6 @@
 const id = "YOUR_CLIENT_ID";
 const sec = "YOUR_SECRET_ID";
-const param = `?client_id=${id}&client_secret=${sec}`;
+const params = `?client_id=${id}&client_secret=${sec}`;
 
 function getErrorMsg(message, username) {
   if (message === "Not Found") {
@@ -11,7 +11,7 @@ function getErrorMsg(message, username) {
 }
 
 function getProfile(username) {
-  return fetch(`https://api.github.com/users/${username}/${params}`)
+  return fetch(`https://api.github.com/users/${username}${params}`)
     .then(res => res.json())
     .then(profile => {
       if (profile.message) {
@@ -38,7 +38,7 @@ function getRepos(username) {
 
 function getStarCount(repos) {
   return repos.reduce(
-    (count, { startgazers_count }) => count + startgazers_count,
+    (count, { stargazers_count }) => count + stargazers_count,
     0
   );
 }
