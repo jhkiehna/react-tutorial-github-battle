@@ -43,15 +43,19 @@ function getStarCount(repos) {
   );
 }
 
-function calculateScore(followers, repos, profile) {
-  return followers * 3 + getStarCount(repos) + Number(profile.public_repos);
+function calculateScore(repos, profile) {
+  return (
+    Number(profile.followers) * 3 +
+    getStarCount(repos) +
+    Number(profile.public_repos)
+  );
 }
 
 function getUserData(player) {
   return Promise.all([getProfile(player), getRepos(player)]).then(
     ([profile, repos]) => ({
       profile,
-      score: calculateScore(profile.followers, repos, profile)
+      score: calculateScore(repos, profile)
     })
   );
 }
