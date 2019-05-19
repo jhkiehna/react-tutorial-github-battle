@@ -12,6 +12,8 @@ import Card from "./Card";
 import PropTypes from "prop-types";
 import Loading from "./Loading";
 import Tooltip from "./Tooltip";
+import queryString from "query-string";
+import { Link } from "react-router-dom";
 
 function ProfileList({ profile }) {
   return (
@@ -21,7 +23,7 @@ function ProfileList({ profile }) {
         {profile.name}
       </li>
 
-      {profile.locaiton && (
+      {profile.location && (
         <li>
           <Tooltip text="User's Location">
             <FaCompass color="rgb(144, 115, 255)" size={22} />
@@ -74,7 +76,9 @@ export default class Results extends React.Component {
   }
 
   componentDidMount() {
-    const { playerOne, playerTwo, onReset } = this.props;
+    const { playerOne, playerTwo } = queryString.parse(
+      this.props.location.search
+    );
 
     battle([playerOne, playerTwo])
       .then(players => {
@@ -128,16 +132,10 @@ export default class Results extends React.Component {
           </Card>
         </div>
 
-        <button onClick={this.props.onReset} className="btn dark-btn btn-space">
+        <Link to="/battle" className="btn dark-btn btn-space">
           Reset
-        </button>
+        </Link>
       </React.Fragment>
     );
   }
 }
-
-Results.propTypes = {
-  playerOne: PropTypes.string.isRequired,
-  playerTwo: PropTypes.string.isRequired,
-  onReset: PropTypes.func.isRequired
-};
