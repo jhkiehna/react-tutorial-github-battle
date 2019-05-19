@@ -1,14 +1,11 @@
-html,
-body,
-#app {
+html, body, #app {
   margin: 0;
   height: 100%;
   width: 100%;
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen-Sans,
-    Ubuntu, Cantarell, Helvetica Neue, sans-serif;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif;
 }
 
 ul {
@@ -26,7 +23,7 @@ li {
 }
 
 .dark {
-  color: #dadada;
+  color: #DADADA;
   background: #1c2022;
   min-height: 100%;
 }
@@ -49,6 +46,10 @@ li {
   color: inherit;
 }
 
+.nav li {
+  margin-right: 10px;
+}
+
 .grid {
   display: flex;
   flex-wrap: wrap;
@@ -56,6 +57,10 @@ li {
 
 .space-around {
   justify-content: space-around;
+}
+
+.space-between {
+  justify-content: space-between;
 }
 
 .header-lg {
@@ -143,7 +148,7 @@ li {
 
 .battle-instructions li {
   flex: 1;
-  min-width: 300px;
+  min-width: 300px
 }
 
 .battle-instructions svg {
@@ -194,7 +199,7 @@ li {
 .btn {
   padding: 10px;
   text-decoration: uppercase;
-  letter-spacing: 0.25em;
+  letter-spacing: .25em;
   border-radius: 3px;
   border: none;
   font-size: 16px;
@@ -254,7 +259,7 @@ li {
 }
 
 .player-inputs .input-dark {
-  color: #dadada;
+  color: #DADADA;
   background: rgba(0, 0, 0, 0.3);
 }
 
